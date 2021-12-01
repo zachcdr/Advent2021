@@ -1,3 +1,3 @@
 ﻿using Advent2021.Days;
 
-Console.WriteLine(DayX.Part1());
+Console.WriteLine(Day01.Part2());
