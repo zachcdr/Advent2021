@@ -13,7 +13,7 @@ namespace Advent2021.Days
 
             foreach (var input in inputs)
             {
-                var instruction = new Instruction(input);
+                var instruction = new InstructionDay2(input);
 
                 switch (instruction.Direction)
                 {
@@ -42,7 +42,7 @@ namespace Advent2021.Days
 
             foreach (var input in inputs)
             {
-                var instruction = new Instruction(input);
+                var instruction = new InstructionDay2(input);
 
                 switch (instruction.Direction)
                 {
@@ -63,9 +63,9 @@ namespace Advent2021.Days
         }
     }
 
-    internal class Instruction
+    internal class InstructionDay2
     {
-        public Instruction(string instrunction)
+        public InstructionDay2(string instrunction)
         {
             var parse = instrunction.Split(" ");
 
