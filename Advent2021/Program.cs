@@ -1,3 +1,3 @@
 ﻿using Advent2021.Days;
 
-Day03.Part2().Wait();
+Day04.Part2();
