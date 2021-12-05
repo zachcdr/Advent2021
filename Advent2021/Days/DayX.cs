@@ -4,18 +4,20 @@ namespace Advent2021.Days
 {
     internal static class DayX
     {
+        private static IEnumerable<string>? _puzzleInput;
+
         public static string Part1()
         {
-            var puzzleInput = PuzzleInput.Get("DayX.txt");
+            _puzzleInput = PuzzleInput.Get("DayX.txt");
 
-            return puzzleInput.First();
+            return _puzzleInput.First();
         }
 
         public static string Part2()
         {
-            var puzzleInput = PuzzleInput.Get("DayX.txt");
+            _puzzleInput = PuzzleInput.Get("DayX.txt");
 
-            return puzzleInput.First();
+            return _puzzleInput.First();
         }
     }
 }

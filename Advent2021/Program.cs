@@ -1,3 +1,3 @@
 ﻿using Advent2021.Days;
 
-Day04.Part2();
+Day05.ProcessVents(doPart2: true);
