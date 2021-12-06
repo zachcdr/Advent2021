@@ -6,18 +6,18 @@ namespace Advent2021.Days
     {
         private static IEnumerable<string>? _puzzleInput;
 
-        public static string Part1()
+        public static void Part1()
         {
             _puzzleInput = PuzzleInput.Get("DayX.txt");
 
-            return _puzzleInput.First();
+            Console.WriteLine(_puzzleInput.First());
         }
 
-        public static string Part2()
+        public static void Part2()
         {
             _puzzleInput = PuzzleInput.Get("DayX.txt");
 
-            return _puzzleInput.First();
+            Console.WriteLine(_puzzleInput.First());
         }
     }
 }
