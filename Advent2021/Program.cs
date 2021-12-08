@@ -1,3 +1,3 @@
 ﻿using Advent2021.Days;
 
-Day07.Part2();
+Day08.Part2();
