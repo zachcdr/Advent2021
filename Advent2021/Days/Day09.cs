@@ -128,6 +128,8 @@ namespace Advent2021.Days
 
             var basins = new List<int>();
 
+            var test = new List<Basin>();
+
             foreach (var low in lows)
             {
                 var basin = new Basin(low, heightMap);
@@ -135,6 +137,47 @@ namespace Advent2021.Days
                 basin.Seach();
 
                 basins.Add(basin.Total);
+
+                test.Add(basin);
+            }
+
+            var lala = test.OrderByDescending(x => x.Total).Take(3);
+
+            foreach (var input in _puzzleInput)
+            {
+                foreach (var i in input)
+                {
+                    var point = heightMap.First(hm => hm.Value == int.Parse(i.ToString())).Key;
+
+
+                    if (lala.Any(w => w._points.Contains(point)))
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write(i);
+                    }
+                    else if (test.Any(t => t._points.Contains(point)))
+                    {
+                        var t = heightMap[point];
+
+                        if (t > 4)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write(i);
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            Console.Write(i);
+                        }
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write(i);
+                    }
+                }
+
+                Console.WriteLine();
             }
 
             var winners = basins.OrderByDescending(x => x).Take(3).ToList();
@@ -150,7 +193,7 @@ namespace Advent2021.Days
         private Dictionary<Point, int> _map;
         private Point _low;
 
-        private List<Point> _points = new List<Point>();
+        public List<Point> _points = new List<Point>();
 
         public Basin(Point low, Dictionary<Point, int> map)
         {
